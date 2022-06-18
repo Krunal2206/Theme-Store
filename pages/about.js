@@ -84,8 +84,8 @@ function About() {
                     <Heading as='h3' size='lg' mb={4}>
                         Photos for everyone
                     </Heading>
-                    <Text mb={3} fontSize={'large'}>Over 3 million free high-resolution images brought to you by the world’s most generous community of photographers.</Text>
-                    <Text mb={3} fontSize={'large'}>Beautiful, free images gifted by the world’s most generous community of photographers. Better than any royalty free or stock photos.</Text>
+                    <Text mb={3} fontSize={'large'}>Over 3 million free high-resolution images brought to you by the world's most generous community of photographers.</Text>
+                    <Text mb={3} fontSize={'large'}>Beautiful, free images gifted by the world's most generous community of photographers. Better than any royalty free or stock photos.</Text>
                     <Text fontSize={'large'}>Grab the Images from Theme Store & Design your own devices.</Text>
                 </Box>
                 <Box display={{ base: 'none', sm: 'block' }}>
