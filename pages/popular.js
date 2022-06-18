@@ -4,7 +4,7 @@ import styles from '../styles/Home.module.css'
 import InfiniteScroll from 'react-infinite-scroll-component';
 import ScrollToTop from '../components/ScrollToTop'
 
-function popular() {
+function Popular() {
 
   const [images, setImages] = useState([]);
   const [page, setPage] = useState(1);
