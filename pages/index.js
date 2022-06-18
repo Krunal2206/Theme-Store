@@ -54,7 +54,7 @@ export default function Home() {
         <InputGroup maxWidth={'80%'} color='white'>
           <InputLeftElement
             pointerEvents='none'
-            children={<Search2Icon color='white'></Search2Icon>}
+            children={<Search2Icon color='white' />}
           />
           <Input color={'white'} type='text' placeholder='Search Image' name='image' value={query} onChange={handleChange} />
         </InputGroup>
