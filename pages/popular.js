@@ -1,32 +1,26 @@
-import { useState, useEffect } from 'react'
-import { Image, InputGroup, InputLeftElement, Input, Box, Text, Spinner } from '@chakra-ui/react'
+import React, { useEffect, useState } from 'react'
+import { Box, Image, Spinner, Text } from '@chakra-ui/react'
 import styles from '../styles/Home.module.css'
-import { Search2Icon } from '@chakra-ui/icons';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import ScrollToTop from '../components/ScrollToTop'
 
-export default function Home() {
+function popular() {
 
   const [images, setImages] = useState([]);
-  const [query, setQuery] = useState('');
   const [page, setPage] = useState(1);
+  const [query, setQuery] = useState('popular');
   const [hasMore, setHasMore] = useState(true);
 
   const fetchImages = () => {
-    fetch(`https://api.unsplash.com/search/photos?query=${!query ? 'super' : query}&client_id=QqHDWLqMPbUQMFYXaMOjLF9iT81ceZzfXkMkiJF1hTQ&per_page=30&page=${page}`)
+    fetch(`https://api.unsplash.com/search/photos?query=${query}&client_id=QqHDWLqMPbUQMFYXaMOjLF9iT81ceZzfXkMkiJF1hTQ&per_page=30&page=${page}`)
       .then(res => res.json())
       .then(data => setImages([...images, ...data.results]))
     setPage(page + 1);
   }
 
   useEffect(() => {
-    fetchImages();
+    fetchImages()
   }, [query]);
-
-  const handleChange = (e) => {
-    setQuery(e.target.value);
-    setImages([]);
-  }
 
   const basicBoxStyles = {
     display: 'flex',
@@ -41,25 +35,16 @@ export default function Home() {
     fontSize: '50px',
     px: 4,
     background:
-      'url(https://images.unsplash.com/photo-1476842634003-7dcca8f832de?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80) center/cover no-repeat',
+      'url(https://images.unsplash.com/photo-1653894604359-22dbdb074d4a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80) center/cover no-repeat',
   }
 
   return (
     <div>
-      <Box sx={basicBoxStyles} filter='auto' brightness='70%' marginTop={{ base: '80px', md: '0px' }}>
-        THEME STORE
+      <Box sx={basicBoxStyles} filter='auto' brightness='70%' marginTop={{ base: '80px', md: '0px' }}>Grab The Popular Images
         <Text color='white' fontSize={'lg'} marginBottom={'5'}>
-          The internet's source of freely-usable images.
+          Design Your Own Device
         </Text>
-        <InputGroup maxWidth={'80%'} color='white'>
-          <InputLeftElement
-            pointerEvents='none'
-            children={<Search2Icon color='white' />}
-          />
-          <Input color={'white'} type='text' placeholder='Search Image' name='image' value={query} onChange={handleChange} />
-        </InputGroup>
       </Box>
-
       <div style={{ marginTop: '20px' }}>
         <InfiniteScroll dataLength={images.length} next={fetchImages} hasMore={hasMore} loader={<><Spinner color='blue.500' speed='0.65s' thickness='4px' /><b> Loading...</b></>} endMessage={<p><b>Yay! You have seen it all</b></p>}>
           <div className={styles.images}>
@@ -80,4 +65,4 @@ export default function Home() {
   )
 }
 
-// https://api.unsplash.com/search/photos?query=super&client_id=QqHDWLqMPbUQMFYXaMOjLF9iT81ceZzfXkMkiJF1hTQ
+export default popular
