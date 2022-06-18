@@ -90,10 +90,10 @@ function About() {
                 </Box>
                 <Box display={{ base: 'none', sm: 'block' }}>
                     <Grid templateColumns='repeat(2, 1fr)' gap={4}>
-                        <Image src='https://images.unsplash.com/photo-1612725558359-fb598a53b380?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80' h={'170px'} w={'210px'} borderRadius={'10px'} />
-                        <Image src='https://images.unsplash.com/photo-1615789591457-74a63395c990?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80' h={'170px'} w={'210px'} borderRadius={'10px'} />
-                        <Image src='https://images.unsplash.com/photo-1615402637736-cd5a123ce973?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80' h={'170px'} w={'210px'} borderRadius={'10px'} />
-                        <Image src='https://images.unsplash.com/photo-1654707264308-286492443b37?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80' h={'170px'} w={'210px'} borderRadius={'10px'} />
+                        <Image src='https://images.unsplash.com/photo-1612725558359-fb598a53b380?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80' alt='' h={'170px'} w={'210px'} borderRadius={'10px'} />
+                        <Image src='https://images.unsplash.com/photo-1615789591457-74a63395c990?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80' alt='' h={'170px'} w={'210px'} borderRadius={'10px'} />
+                        <Image src='https://images.unsplash.com/photo-1615402637736-cd5a123ce973?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80' alt='' h={'170px'} w={'210px'} borderRadius={'10px'} />
+                        <Image src='https://images.unsplash.com/photo-1654707264308-286492443b37?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80' alt='' h={'170px'} w={'210px'} borderRadius={'10px'} />
                     </Grid>
                 </Box>
             </Flex>

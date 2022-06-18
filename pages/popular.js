@@ -65,4 +65,4 @@ function Popular() {
   )
 }
 
-export default popular
+export default Popular

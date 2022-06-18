@@ -14,7 +14,7 @@ function Layout({ children }) {
         setTimeout(() => {
             setLoading(false)
         }, 8000);
-    }, [loading]);
+    }, []);
 
     return (
         <>

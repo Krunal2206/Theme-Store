@@ -11,6 +11,3 @@ export default async function handler(req, res) {
         res.status(500).json('Internal server error')
     }
 }
-
-// `https://api.unsplash.com/photos/?client_id=${id}&page=${page}`
-// "alrItWzTWK8wSnC9wHnO10lLXIYJ0UOf6aGuEtWkEnE"

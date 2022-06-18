@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styles from '../styles/Home.module.css'
-import { Box, Text, Button, ButtonGroup, Image, Spinner } from '@chakra-ui/react'
+import { Box, Text, Button, ButtonGroup, Image } from '@chakra-ui/react'
 import ScrollToTop from '../components/ScrollToTop'
 
 function Categories() {
@@ -82,4 +82,4 @@ function Categories() {
     )
 }
 
-export default categories
+export default Categories

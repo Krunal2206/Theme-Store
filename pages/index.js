@@ -79,5 +79,3 @@ export default function Home() {
     </div>
   )
 }
-
-// https://api.unsplash.com/search/photos?query=super&client_id=QqHDWLqMPbUQMFYXaMOjLF9iT81ceZzfXkMkiJF1hTQ
