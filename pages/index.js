@@ -49,7 +49,7 @@ export default function Home() {
       <Box sx={basicBoxStyles} filter='auto' brightness='70%' marginTop={{ base: '80px', md: '0px' }}>
         THEME STORE
         <Text color='white' fontSize={'lg'} marginBottom={'5'}>
-          The internet's source of freely-usable images.
+          The internet&apos;s source of freely-usable images.
         </Text>
         <InputGroup maxWidth={'80%'} color='white'>
           <InputLeftElement
