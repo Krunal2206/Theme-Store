@@ -86,7 +86,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
 const NavItem = ({ icon, children, href, ...rest }) => {
     const router = useRouter();
     return (
-        <Link href={href} style={{ textDecoration: 'none', color: 'white' }} _focus={{ boxShadow: 'none' }}>
+        <Link href={href} style={{ textDecoration: 'none', color: 'white' }} _focus={{ boxShadow: 'none' }} passHref>
             <Flex
                 align="center"
                 fontSize="lg"
