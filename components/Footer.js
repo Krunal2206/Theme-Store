@@ -53,10 +53,10 @@ export default function SmallWithSocial() {
                 <Text fontSize={'2xl'}>Theme Store</Text>
                 <Text>© 2022 Krunal Thakar. All rights reserved</Text>
                 <Stack direction={'row'} spacing={6}>
-                    <SocialButton label={'Twitter'} href={'#'}>
+                    <SocialButton label={'Github'} href={'https://github.com/Krunal2206/'}>
                         <FaGithub />
                     </SocialButton>
-                    <SocialButton label={'YouTube'} href={'#'}>
+                    <SocialButton label={'Linkedin'} href={'https://www.linkedin.com/in/krunal2206/'}>
                         <FaLinkedin />
                     </SocialButton>
                     <SocialButton label={'Instagram'} href={'#'}>
