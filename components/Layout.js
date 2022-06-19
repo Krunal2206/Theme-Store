@@ -13,7 +13,7 @@ function Layout({ children }) {
         setLoading(true)
         setTimeout(() => {
             setLoading(false)
-        }, 8000);
+        }, 6000);
     }, []);
 
     return (
