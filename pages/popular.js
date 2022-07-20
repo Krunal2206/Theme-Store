@@ -11,15 +11,23 @@ function Popular() {
   const [query, setQuery] = useState('popular');
   const [hasMore, setHasMore] = useState(true);
 
+  let isMounted = true;
   const fetchImages = () => {
-    fetch(`https://api.unsplash.com/search/photos?query=${query}&client_id=QqHDWLqMPbUQMFYXaMOjLF9iT81ceZzfXkMkiJF1hTQ&per_page=30&page=${page}`)
+    fetch(`https://api.unsplash.com/search/photos?query=${query}&client_id=${process.env.NEXT_PUBLIC_CLIENTID}&per_page=30&page=${page}`)
       .then(res => res.json())
-      .then(data => setImages([...images, ...data.results]))
+      .then(data => {
+        if (isMounted) {
+          setImages([...images, ...data.results])
+        }
+      })
     setPage(page + 1);
   }
 
   useEffect(() => {
     fetchImages()
+    return () => {
+      isMounted = false;
+    };
   }, [query]);
 
   const basicBoxStyles = {

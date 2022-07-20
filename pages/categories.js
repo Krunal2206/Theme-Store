@@ -8,15 +8,22 @@ function Categories() {
     const [images, setImages] = useState([]);
     const [query, setQuery] = useState('');
 
-
+    let isMounted = true;
     const fetchImages = () => {
-        fetch(`https://api.unsplash.com/search/photos?query=${!query ? 'editorial' : query}&client_id=QqHDWLqMPbUQMFYXaMOjLF9iT81ceZzfXkMkiJF1hTQ&per_page=30`)
+        fetch(`https://api.unsplash.com/search/photos?query=${!query ? 'editorial' : query}&client_id=${process.env.NEXT_PUBLIC_CLIENTID}&per_page=30`)
             .then(res => res.json())
-            .then(data => setImages(data.results))
+            .then(data => {
+                if (isMounted) {
+                    setImages(data.results)
+                }
+            })
     }
 
     useEffect(() => {
         fetchImages();
+        return () => {
+            isMounted = false;
+        };
     }, [query]);
 
     const basicBoxStyles = {
