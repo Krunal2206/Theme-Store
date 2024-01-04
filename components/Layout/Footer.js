@@ -21,7 +21,7 @@ const Footer = () => {
                 <Image height={100} width={200} src='/logo.png' alt='Logo' priority loading="eager" />
             </Link>
 
-            <Text>© {new Date().getFullYear()} Krunal Thakar. All rights reserved.</Text>
+            <Text textAlign={'center'}>© {new Date().getFullYear()} Krunal Thakar. All rights reserved.</Text>
 
             <Stack direction="row" spacing={5} alignItems="center">
                 {SocialButtons.map((sc, index) => (
