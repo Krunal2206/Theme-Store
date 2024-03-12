@@ -10,35 +10,44 @@ const MotionImage = motion(Image);
 
 const ModelComponent = ({ isOpen, selected, handleClose }) => {
 
+    // Get the session data and router object from the hooks
     const { data: session } = useSession()
     const router = useRouter()
-    const [loading, setLoading] = useState(false);
-    const [progress, setProgress] = useState(0);
-    const toast = useToast();
+    // Initialize loading and progress states for the download functionality
+    const [loading, setLoading] = useState(false)
+    const [progress, setProgress] = useState(0)
+    // Initialize the toast object for displaying notifications
+    const toast = useToast()
 
+    // Handle the download functionality when the download button is clicked
     const handleDownload = async () => {
         setLoading(true);
 
         try {
-
+            // If the user is not logged in, redirect them to the sign-in page
             if (!session) {
+                handleClose() // Close the modal before redirecting
                 return router.push({
                     pathname: '/auth/signin',
                     query: { prev: router.asPath } // Pass the current page's URL as the 'prev' query parameter
                 });
             }
 
-            // Simulating an asynchronous download
-            const url = selected.url;
-            const response = await fetch(url);
-
-            // Check if the request was successful
-            if (!response.ok) {
-                throw new Error(`Download failed with status: ${response.status}`);
+            // Validate the 'selected.url' before fetching
+            if (!selected.url) {
+                throw new Error("Invalid 'selected.url' value.")
             }
 
-            const blob = await response.blob();
-            saveAs(blob, 'download');
+            // Simulating an asynchronous download
+            const response = await fetch(selected.url);
+
+            // Check if the request was successful
+            if (response.ok) {
+                const blob = await response.blob();
+                saveAs(blob, 'download');
+            } else {
+                throw new Error(`Download failed with status: ${response.status}`);
+            }
         } catch (error) {
             console.error('Download error:', error);
             toast({
@@ -57,7 +66,7 @@ const ModelComponent = ({ isOpen, selected, handleClose }) => {
         <Modal isOpen={isOpen} onClose={handleClose} isCentered motionPreset='slideInBottom' scrollBehavior={'inside'} size={'lg'}>
             <ModalOverlay />
             <ModalContent mx={2}>
-                <ModalHeader></ModalHeader>
+                <ModalHeader />
                 <ModalCloseButton />
 
                 <ModalBody pb={6} mt={4}>
@@ -69,7 +78,7 @@ const ModelComponent = ({ isOpen, selected, handleClose }) => {
                         <Stack direction='row' flexWrap={'wrap'}>
                             {selected &&
                                 selected.tags.map((tag, index) => (
-                                    <Badge key={index} variant='solid' fontSize={'xs'}>
+                                    <Badge key={`tag-${index}`} variant='solid' fontSize={'xs'}>
                                         {tag.title}
                                     </Badge>
                                 ))}

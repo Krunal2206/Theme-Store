@@ -1,11 +1,15 @@
 import { Box, Image } from '@chakra-ui/react'
 import { motion } from 'framer-motion';
 
-const MotionBox = motion(Box);
-const MotionImage = motion(Image);
+// MotionBox component wraps Box component with motion animation
+const MotionBox = motion(Box)
+
+// MotionImage component wraps Image component with motion animation
+const MotionImage = motion(Image)
 
 const ImageCard = ({ item, onOpen, setSelected }) => {
 
+    // handleClick function sets selected item and opens modal when ImageCard is clicked
     const handleClick = () => {
         setSelected(item)
         onOpen(true)

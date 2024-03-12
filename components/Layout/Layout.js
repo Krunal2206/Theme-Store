@@ -29,7 +29,7 @@ const Layout = ({ children }) => {
                 <meta name="description" content="Provide beautiful wallpapers" />
                 <link rel="icon" type="image/png" sizes="32x32" href="/icons8-xlarge-icons-color-32.png" />
             </Head>
-            <Flex direction={'column'} height="100vh">
+            <Flex direction={'column'}>
                 {loading ? <Loader /> : (
                     <>
                         <Navbar />
