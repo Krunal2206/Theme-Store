@@ -1,12 +1,17 @@
 import { Badge, Box, Button, Flex, Icon, Image, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Progress, Stack, Text, useToast } from '@chakra-ui/react';
 import { saveAs } from 'file-saver';
 import { motion } from 'framer-motion';
-import React, { useState } from 'react';
+import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/router';
+import { useState } from 'react';
 import { FaHeart } from 'react-icons/fa';
 
 const MotionImage = motion(Image);
 
 const ModelComponent = ({ isOpen, selected, handleClose }) => {
+
+    const { data: session } = useSession()
+    const router = useRouter()
     const [loading, setLoading] = useState(false);
     const [progress, setProgress] = useState(0);
     const toast = useToast();
@@ -15,6 +20,14 @@ const ModelComponent = ({ isOpen, selected, handleClose }) => {
         setLoading(true);
 
         try {
+
+            if (!session) {
+                return router.push({
+                    pathname: '/auth/signin',
+                    query: { prev: router.asPath } // Pass the current page's URL as the 'prev' query parameter
+                });
+            }
+
             // Simulating an asynchronous download
             const url = selected.url;
             const response = await fetch(url);

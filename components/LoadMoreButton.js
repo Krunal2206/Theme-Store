@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Box, Button, Center, Heading, Progress } from '@chakra-ui/react';
 
 const LoadMoreButton = ({ onClick, isMaxPages, loading }) => {

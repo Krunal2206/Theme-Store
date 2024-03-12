@@ -1,7 +1,6 @@
 import { fadeInUp } from '@/utils/animations';
 import { Box, Flex, Image, chakra, Heading } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
-import React from 'react'
 
 const MotionFlex = motion(Flex);
 

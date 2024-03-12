@@ -3,7 +3,6 @@ import { Search2Icon } from '@chakra-ui/icons';
 import { Center, Heading, Input, InputGroup, InputLeftElement, Text } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
-import React from 'react';
 
 const Hero = ({ data, search, handleChange, handleSubmit }) => {
     const router = useRouter();
@@ -32,7 +31,7 @@ const Hero = ({ data, search, handleChange, handleSubmit }) => {
                         {data.subtitle}
                     </Text>
                 </motion.div>
-                {router.pathname === '/' ? (
+                {router.pathname === '/' && (
                     <motion.div variants={fadeInChild}>
                         <Center mt={3} as="form" onSubmit={handleSubmit}>
                             <InputGroup>
@@ -53,7 +52,7 @@ const Hero = ({ data, search, handleChange, handleSubmit }) => {
                             </InputGroup>
                         </Center>
                     </motion.div>
-                ) : null}
+                )}
             </Center>
         </motion.div>
     );

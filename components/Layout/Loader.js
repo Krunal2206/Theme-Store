@@ -1,5 +1,4 @@
 import { Box, Center, Flex, Text, keyframes, usePrefersReducedMotion } from '@chakra-ui/react'
-import React from 'react'
 import { ClockLoader } from 'react-spinners'
 
 const textclip = keyframes`
@@ -28,7 +27,7 @@ const Loader = () => {
         <Center h={'100vh'} bgColor={'#232b3a'}>
             <Box color={'white'} textAlign="center">
                 <Flex justifyContent={'center'} alignItems={'center'} mb={'5'}>
-                    <ClockLoader loading={true} color={'white'} size={50} />
+                    <ClockLoader loading color={'white'} size={50} />
                     <Text color='white' fontSize={'2xl'} ml={'4'}>Loading . . .</Text>
                 </Flex>
                 <Box>

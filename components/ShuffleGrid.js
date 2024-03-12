@@ -1,6 +1,6 @@
 import { shuffle } from '@/utils/helpers';
 import { Grid } from '@chakra-ui/react'
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import { squareData } from '@/data';
 import { fadeInRight } from '@/utils/animations';

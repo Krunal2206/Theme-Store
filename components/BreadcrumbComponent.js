@@ -2,7 +2,6 @@ import { ChevronRightIcon } from '@chakra-ui/icons'
 import { Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import React from 'react'
 
 const BreadcrumbComponent = () => {
 

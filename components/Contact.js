@@ -1,7 +1,8 @@
 import { fadeInLeft, fadeInRight } from '@/utils/animations';
 import { Button, Container, FormControl, FormErrorMessage, FormHelperText, FormLabel, Heading, Input, Stack, Textarea, VStack, useToast } from '@chakra-ui/react'
 import { motion } from 'framer-motion';
-import React from 'react'
+import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form'
 
 const MotionHeading = motion(Heading);
@@ -11,9 +12,19 @@ const Contact = () => {
 
     const { handleSubmit, register, reset, formState: { errors, isSubmitting }, } = useForm()
     const toast = useToast()
+    const { data: session } = useSession()
+    const router = useRouter()
 
     const onSubmit = async (values) => {
         try {
+
+            if (!session) {
+                return router.push({
+                    pathname: '/auth/signin',
+                    query: { prev: router.asPath } // Pass the current page's URL as the 'prev' query parameter
+                });
+            }
+
             const res = await fetch(`${process.env.NEXT_PUBLIC_CONCERNURL}`, {
                 method: 'POST',
                 headers: {

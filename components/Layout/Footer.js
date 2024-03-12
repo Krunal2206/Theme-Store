@@ -1,8 +1,7 @@
 import { SocialButtons } from '@/data'
-import { IconButton, Stack, Text } from '@chakra-ui/react'
+import { Box, Stack, Text } from '@chakra-ui/react'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
 
 const Footer = () => {
     return (
@@ -25,15 +24,23 @@ const Footer = () => {
 
             <Stack direction="row" spacing={5} alignItems="center">
                 {SocialButtons.map((sc, index) => (
-                    <IconButton
-                        key={index}
-                        as={Link}
-                        href={sc.url}
-                        aria-label={sc.label}
-                        colorScheme={sc.type}
-                        icon={sc.icon}
-                        rounded="md"
-                    />
+                    <Link key={index} href={sc.url} isExternal>
+                        <Box
+                            as="button"
+                            rounded="md"
+                            padding={2}
+                            border="1px solid"
+                            borderColor="gray.500"
+                            _hover={{
+                                borderColor: 'gray.700',
+                            }}
+                            _focus={{
+                                boxShadow: 'outline',
+                            }}
+                        >
+                            {sc.icon}
+                        </Box>
+                    </Link>
                 ))}
             </Stack>
         </Stack>

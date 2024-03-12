@@ -4,7 +4,7 @@ import LoadMoreButton from '@/components/LoadMoreButton';
 import ScrollToTop from '@/components/ScrollToTop';
 import { fetchImages } from '@/utils/helpers';
 import { Box } from '@chakra-ui/react'
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 function Popular({ initialImages }) {
 

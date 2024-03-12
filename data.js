@@ -14,19 +14,16 @@ export const SocialButtons = [
         icon: <FaGithub />,
         label: 'Github',
         url: 'https://github.com/Krunal2206/',
-        type: 'teal'
     },
     {
         icon: <FaLinkedin />,
         label: 'Linkedin',
         url: 'https://www.linkedin.com/in/krunal2206/',
-        type: 'linkedin'
     },
     {
         icon: <FaInstagram />,
         label: 'Instagram',
         url: '#',
-        type: 'red'
     }
 ]
 

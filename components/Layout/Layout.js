@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Navbar from './Navbar/Navbar';
 import { Flex } from '@chakra-ui/react';
 import Loader from './Loader';
@@ -29,13 +29,13 @@ const Layout = ({ children }) => {
                 <meta name="description" content="Provide beautiful wallpapers" />
                 <link rel="icon" type="image/png" sizes="32x32" href="/icons8-xlarge-icons-color-32.png" />
             </Head>
-            <Flex direction={'column'}>
-                {
-                    loading ? <Loader /> : <>
+            <Flex direction={'column'} height="100vh">
+                {loading ? <Loader /> : (
+                    <>
                         <Navbar />
                         {children}
                     </>
-                }
+                )}
             </Flex>
         </>
     )

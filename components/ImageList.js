@@ -1,5 +1,5 @@
 import { Box, useDisclosure } from '@chakra-ui/react'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import ImageCard from './ImageCard'
 import { AnimatePresence } from 'framer-motion'
 import ModelComponent from './ModelComponent'
