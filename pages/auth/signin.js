@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { getProviders, getSession, signIn, useSession } from "next-auth/react"
+import { getProviders, getSession, signIn } from "next-auth/react"
 import { Box, Button, Container, Heading, Stack, createIcon } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 
